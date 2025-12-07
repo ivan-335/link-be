@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Services\MatrixService;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Http\Requests\Matrix\StoreMatrixRequest;
 
 class MatrixController extends Controller
 {
@@ -31,7 +32,7 @@ class MatrixController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): JsonResponse
+    public function store(StoreMatrixRequest  $request): JsonResponse
     {
         $grid = $request->input('grid');
         $size = (int)$request->input('size');
@@ -82,7 +83,7 @@ class MatrixController extends Controller
         ]);
 
         $matrix->update($validated);
-        // dd($validated);
+
         if (isset($validated['grid']) && isset($validated['size'])) {
             $parsedMatrix = $this->matrixService->parseMatrix($validated['grid'], (int)$validated['size']);
             Cell::where('matrix_id', $matrix->id)->delete();
