@@ -35,5 +35,5 @@ Designed to work with the React frontend using **Sanctum tokens**.
 
 ddev start
 ddev composer install
-ddev artisan migrate
-ddev artisan key:generate
+ddev php artisan migrate
+ddev php artisan key:generate
