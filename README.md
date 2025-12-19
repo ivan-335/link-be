@@ -8,7 +8,7 @@ Designed to work with the React frontend using **Sanctum tokens**.
 
 ---
 
-## Features
+Features
 
 - Laravel 12 (no `AppServiceProvider`, no kernel.php)
 - Token-based Auth via **Laravel Sanctum**
@@ -20,7 +20,7 @@ Designed to work with the React frontend using **Sanctum tokens**.
 
 ---
 
-## Tech Stack
+Tech Stack
 
 - **PHP 8.3+**
 - **Laravel 12**
@@ -31,9 +31,13 @@ Designed to work with the React frontend using **Sanctum tokens**.
 
 ---
 
-## Installation
+Installation
 
+Install ddev if you havent: https://ddev.com/get-started/
 ddev start
 ddev composer install
+Copy the .env.example to .env and edit the APP URL
 ddev php artisan migrate
 ddev php artisan key:generate
+
+Swagger URL: http://link-be.ddev.site/api/documentation
